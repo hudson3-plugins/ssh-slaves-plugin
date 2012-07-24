@@ -23,6 +23,7 @@
     </licenses>
 
     <properties>
+        <hudsonTags>slaves</hudsonTags>
         <compileSource>1.6</compileSource>
         <maven-surefire-plugin.version>2.8.1</maven-surefire-plugin.version>
         <maven-pmd-plugin.version>2.5</maven-pmd-plugin.version>
@@ -143,6 +144,9 @@
                     Maintainer
                 </role>
             </roles>
+            <email>
+                winston.prakash@gmail.com
+            </email>
         </developer>
         <developer>
             <id>kohsuke</id>
