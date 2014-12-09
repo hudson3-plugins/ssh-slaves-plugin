@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.eclipse.hudson.plugins</groupId>
         <artifactId>hudson-plugin-parent</artifactId>
-        <version>3.0.0-M2-1</version>
+        <version>3.0.0</version>
         <relativePath />
     </parent>
 
@@ -95,6 +95,11 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eclipse.hudson.tools</groupId>
+                <artifactId>maven-hpi-plugin</artifactId>
+                <version>3.0.3</version>
             </plugin>
         </plugins>
     </build>
