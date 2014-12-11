@@ -418,6 +418,7 @@ public class SSHLauncher extends ComputerLauncher {
      * @throws IOException          If something goes wrong.
      * @throws InterruptedException if any.
      */
+    @SuppressWarnings("PMD.AvoidUsingOctalValues")
     private void copySlaveJar(TaskListener listener, String workingDirectory) throws IOException, InterruptedException {
         String fileName = workingDirectory + "/slave.jar";
 
@@ -431,7 +432,8 @@ public class SSHLauncher extends ComputerLauncher {
                 if(fileAttributes == null) {
                     listener.getLogger().println(Messages.SSHLauncher_RemoteFSDoesNotExist(getTimestamp(),
                         workingDirectory));
-                    sftpClient.mkdirs(workingDirectory, 700);
+                    // It would be OK with 0777 or 0755, but Jenkins appears to do this way.
+                    sftpClient.mkdirs(workingDirectory, 0700);
                 } else if(fileAttributes.isRegularFile()) {
                     throw new IOException(Messages.SSHLauncher_RemoteFSIsAFile(workingDirectory));
                 }
